@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>JavaScript HTML DOM</h2>
+
+    <p>Hello World!</p>
+
+    <p>Hello Norway!</p>
+
+    <p id="demo01"></p>
+
+    <script>
+        var myNodelist =
+            document.querySelectorAll("p")
+        document.getElementById("demo01").innerHTML =
+            "The innerHTML of the second paragraph is: " + myNodelist[1].innerHTML
+    </script>
+    <hr>
+
+    <h2>JavaScript HTML DOM!</h2>
+
+    <p>Hellow World!</p>
+
+    <p>Hellow Norway!</p>
+
+    <p id="demo02"></p>
+
+    <script>
+        var myNodelist = document.querySelectorAll("p");
+        document.getElementById("demo02").innerHTML =
+            "This document contains " + myNodelist.length + " paragraphs.";
+    </script>
+    <hr>
+
+    <h2>JavaScript HTML DOM</h2>
+
+    <p>Hello World!</p>
+
+    <p>Hello Norway!</p>
+
+    <p>Click the button to change the color of all p elements.</p>
+
+    <button onclick="myFunction01()">Try it</button>
+
+    <script>
+        function myFunction01() {
+            var myNodelist =
+                document.querySelectorAll("p")
+            for (var i = 0; i < myNodelist.length; i++) {
+                myNodelist[i].style.color = "red"
+            }
+        }
+    </script>
+    <hr>
+</body>
+
+</html>

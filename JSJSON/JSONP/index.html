@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Request JSON using the script tag</h2>
+    <p>The PHP file returns a call to a function that will handle the JSON data.</p>
+
+    <p id="demo01"></p>
+
+    <script>
+        function myFunc(myObj) {
+            document.getElementById("demo01").innerHTML = myObj.name
+        }
+    </script>
+
+    <script src="demo_json.php"></script>
+    <hr>
+
+    <body>
+
+        <h2>Click the Button.</h2>
+        <p>A script tag with a src attribute is created and placed in the document.</p>
+        <p>The PHP file returns a call to a function with the JSON object as a parameter.</p>
+
+        <button onclick="clickButton()">Click me!</button>
+
+        <p id="demo02"></p>
+
+        <script>
+            function clickButton() {
+                var s = document.createElement("script");
+                s.src = "demo_jsonp.php";
+                document.body.appendChild(s);
+            }
+
+            function myFunc(myObj) {
+                document.getElementById("demo02").innerHTML = myObj.name;
+            }
+        </script>
+        <hr>
+
+        <body>
+
+            <h2>Click the Button.</h2>
+            <p>A script tag with a src attribute is created and placed in the document.</p>
+            <p>The PHP file returns a call to a function with the JSON object as a parameter.</p>
+
+            <button onclick="clickButton()">Click me!</button>
+
+            <p id="demo03"></p>
+
+            <p>Try changing the table property from "customers" to "products".</p>
+
+            <script>
+                function clickButton() {
+                    var obj, s
+                    obj = { table: "customers", limit: 10 };
+                    s = document.createElement("script");
+                    s.src = "jsonp_demo_db.php?x=" + JSON.stringify(obj);
+                    document.body.appendChild(s);
+                }
+
+                function myFunc(myObj) {
+                    var x, txt = "";
+                    for (x in myObj) {
+                        txt += myObj[x].name + "<br>";
+                    }
+                    document.getElementById("demo03").innerHTML = txt;
+                }
+            </script>
+            <hr>
+
+            <body>
+
+                <h2>Request With a Callback Function</h2>
+                <p>The PHP file returns a call to the function you send as a callback.</p>
+
+                <button onclick="clickButton()">Click me!</button>
+
+                <p id="demo04"></p>
+
+                <script>
+                    function clickButton() {
+                        var s = document.createElement("script");
+                        s.src = "demo_jsonp2.php?callback=myDisplayFunction";
+                        document.body.appendChild(s);
+                    }
+
+                    function myDisplayFunction(myObj) {
+                        document.getElementById("demo04").innerHTML = myObj.name;
+                    }
+                </script>
+                <hr>
+            </body>
+
+</html>

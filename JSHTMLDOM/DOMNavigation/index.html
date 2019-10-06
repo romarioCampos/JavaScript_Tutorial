@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="id01">My First Page</h1>
+    <p id="id02"></p>
+
+    <script>
+        document.getElementById("id02").innerHTML =
+            document.getElementById("id01").innerHTML
+    </script>
+    <hr>
+
+    <h1 id="id03">My First Page</h1>
+    <p id="id04"></p>
+
+    <script>
+        document.getElementById("id04").innerHTML =
+            document.getElementById("id03").firstChild.nodeValue
+    </script>
+    <hr>
+
+    <h1 id="id05">My First Page</h1>
+    <p id="id06"></p>
+
+    <script>
+        document.getElementById("id06").innerHTML =
+            document.getElementById("id05").childNodes[0].nodeValue
+    </script>
+    <hr>
+
+    <p>Hello World!</p>
+
+    <div>
+        <p>The DOM is very useful!</p>
+        <p>This example demonstrates the <b>document.body</b> property</p>
+    </div>
+
+    <script>
+        alert(document.body.innerHTML)
+    </script>
+    <hr>
+
+    <p>Hello World!</p>
+
+    <div>
+        <p>The DOM is very useful!</p>
+        <p>This example demonstrates the <b>docuemtn.documentElement</b> property.</p>
+    </div>
+
+    <script>
+        alert(document.documentElement.innerHTML)
+    </script>
+    <hr>
+
+    <h1 id="id07">My First Page</h1>
+    <p id="id08"></p>
+
+    <script>
+        document.getElementById("id08").innerHTML =
+            document.getElementById("id07").nodeName
+    </script>
+    <hr>
+
+    <h1 id="id09">My First Page</h1>
+    <p id="id010"></p>
+
+    <script>
+        document.getElementById("id010").innerHTML =
+            document.getElementById("id09").nodeType
+    </script>
+    <hr>
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>A function can access variables defined inside the function:</p>
+
+    <button type="button" onclick="myFunction01()">Click Me!</button>
+
+    <p id="demo01"></p>
+
+    <script>
+        function myFunction01() {
+            var a = 4
+
+            document.getElementById("demo01").innerHTML = a * a
+        }
+    </script>
+    <hr>
+
+    <h2>JavaScript Function Closures</h2>
+
+    <p>Counting with a global variable.</p>
+
+    <p id="demo02"></p>
+
+    <script>
+        // Initiate counter
+        var counter = 0
+
+        // Function to increment counter
+        function add() {
+            counter += 1
+        }
+
+        // Call add() 3 times
+        add()
+        add()
+        add()
+
+        // The counter should now be 3
+        document.getElementById("demo02").innerHTML = "The counter is: " + counter
+    </script>
+    <hr>
+
+    <h2>JavaScript Function Closures</h2>
+
+    <p>Counting with a local variable.</p>
+
+    <p id="demo03"></p>
+
+    <script>
+        // Initiate counter
+        var counter = 0
+
+        // Function to increment counter
+        function add() {
+            var counter = 0
+            counter += 1
+        }
+
+        // Call add() 3 times
+        add()
+        add()
+        add()
+
+        // The result is not 3 because you mix up the globaland local counter
+        document.getElementById("demo03").innerHTML = "The counter is: " + counter
+    </script>
+    <hr>
+
+    <h2>JavaScript Closures</h2>
+
+    <p>Counting with a local variable.</p>
+
+    <button type="button" onclick="myFunction01()">Count!</button>
+
+    <p id="demo04">0</p>
+
+    <script>
+        // Function to increment counter
+        function add() {
+            var counter = 0
+            counter += 1
+            return counter
+        }
+        // Trying to increment the counter
+        function myFunction01() {
+
+            document.getElementById("demo04").innerHTML = add()
+        }
+    </script>
+    <hr>
+
+    <h2>JavaScript Function Closures</h2>
+
+    <p>Counting with a local variable.</p>
+
+    <p id="demo05">0</p>
+
+    <script>
+        document.getElementById("demo05").innerHTML = add()
+        function add() {
+            var counter = 0
+            function plus() { counter += 1 }
+            plus()
+            return counter
+        }
+    </script>
+    <hr>
+
+    <h2>JavaScript Closures</h2>
+
+    <p>Counting with a local variable.</p>
+
+    <button type="button" onclick="myFunction02()">Count!</button>
+
+    <p id="demo06">0</p>
+
+    <script>
+        var add = (function () {
+            var counter = 0
+            return function () { counter += 1; return counter; }
+        })()
+
+        function myFunction02() {
+
+            document.getElementById("demo06").innerHTML = add()
+        }
+    </script>
+    <hr>
+</body>
+
+</html>

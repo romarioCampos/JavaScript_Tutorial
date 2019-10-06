@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>JavaScript ISO Dates</h2>
+
+    <p id="demo1"></p>
+
+    <script>
+        var d = new Date("2015-03-25")
+        document.getElementById("demo1").innerHTML = d
+    </script>
+    <hr>
+
+    <h2>JavaScript ISO Dates</h2>
+
+    <p id="demo2"></p>
+
+    <script>
+        var d = new Date("2015-03")
+        document.getElementById("demo2").innerHTML = d
+    </script>
+    <hr>
+
+    <h2>JavaScript ISO Dates</h2>
+
+    <p id="demo3"></p>
+
+    <script>
+        var d = new Date("2015")
+        document.getElementById("demo3").innerHTML = d
+    </script>
+    <hr>
+
+    <h2>JavaScript ISO Dates</h2>
+
+    <p>Separate date and time with a capital T.</p>
+
+    <p>Indicate UTC time with a capital Z.</p>
+
+    <p id="demo4"></p>
+
+    <script>
+        var d = new Date("2015-03-25T12:00:00z")
+        document.getElementById("demo4").innerHTML = d
+    </script>
+    <hr>
+
+    <h2>JavaScript ISO Dates</h2>
+
+    <p>Modify the time relative to UTC by adding +HH:MM or subtraction -HH:MM to the time.</p>
+
+    <p id="demo5"></p>
+
+    <script>
+        document.getElementById("demo5").innerHTML = new Date("2015-03-25T12:00:00-06:00")
+    </script>
+    <hr>
+
+    <h2>JavaScript new Date()</h2>
+
+    <p id="demo6"></p>
+
+    <script>
+        var d = new Date("03/25/2015")
+        document.getElementById("demo6").innerHTML = d
+    </script>
+    <hr>
+
+    <h2>JavaScript new Date()</h2>
+
+    <p id="demo7"></p>
+
+    <script>
+        var d = new Date("Mar 25 2015")
+        document.getElementById("demo7").innerHTML = d
+    </script>
+    <hr>
+
+    <h2>JavaScript new Date()</h2>
+
+    <p id="demo8"></p>
+
+    <script>
+        var d = new Date("January 25 2015")
+        document.getElementById("demo8").innerHTML = d
+    </script>
+    <hr>
+
+    <h2>JavaScript new Date()</h2>
+
+    <p id="demo9"></p>
+
+    <script>
+        var d = new Date("Jan 25 2015")
+        document.getElementById("demo9").innerHTML = d
+    </script>
+    <hr>
+
+    <h2>JavaScript new Date()</h2>
+
+    <p id="demo10"></p>
+
+    <script>
+        var d = new Date("JANUARY, 25, 2015")
+        document.getElementById("demo10").innerHTML = d
+    </script>
+    <hr>
+
+    <h2>JavaScript Date.parse()</h2>
+
+    <p>Date.parse() returns the number of milliseconds between the date and January 1, 1970:</p>
+
+    <p id="demo11"></p>
+
+    <script>
+        var msec = Date.parse("March 21, 2012")
+        document.getElementById("demo11").innerHTML = msec
+    </script>
+    <hr>
+
+    <p>Date.parse(string) returns milliseconds.</p>
+    <p>You can use the return value to convert the string to a date object:</p>
+
+    <p id="demo12"></p>
+
+    <script>
+        var msec = Date.parse("March 21, 2012")
+        var d = new Date(msec)
+        document.getElementById("demo12").innerHTML = d
+    </script>
+    <hr>
+</body>
+
+</html>

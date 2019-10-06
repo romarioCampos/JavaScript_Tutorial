@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>JavaScript Alert</h2>
+
+    <button onclick="myFunction01()">Try it</button>
+
+    <script>
+        function myFunction01() {
+            alert("I am an alert box!")
+        }
+    </script>
+    <hr>
+
+    <h2>JavaScript Confirm Box</h2>
+
+
+    <button onclick="myFunction02()">Try it</button>
+
+    <p id="demo01"></p>
+
+    <script>
+        function myFunction02() {
+            var txt;
+            if (confirm("Press a button!")) {
+                txt = "You pressed OK!";
+            } else {
+                txt = "You pressed Cancel!";
+            }
+            document.getElementById("demo01").innerHTML = txt;
+        }
+    </script>
+    <hr>
+
+    <h2>JavaScript Prompt</h2>
+
+    <button onclick="myFunction03()">Try it</button>
+
+    <p id="demo02"></p>
+
+    <script>
+        function myFunction03() {
+            var txt
+            var person = prompt("Please enter your name:", "Harry Potter")
+            if (person == null || person == "") {
+                txt = "User cancelled the prompt."
+            } else {
+                txt = "Hello " + person + "! How are you today?"
+            }
+
+            document.getElementById("demo02").innerHTML = txt
+        }
+    </script>
+    <hr>
+
+    <h2>JavaScript</h2>
+    <p>Line-breaks in a popup box.</p>
+
+    <button onclick="alert('Hello\nHow are you?')">Try it</button>
+    <hr>
+</body>
+
+</html>

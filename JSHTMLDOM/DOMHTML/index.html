@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        document.write(Date())
+    </script>
+    <hr>
+
+    <h2>JavaScript can Change HTML</h2>
+
+    <p id="p1">Hello World!</p>
+
+    <script>
+        document.getElementById("p1").innerHTML = "New text!"
+    </script>
+
+    <p>The paragraph above was chenged by a script.</p>
+    <hr>
+
+    <h1 id="id01">OLd Heading</h1>
+
+    <script>
+        var element =
+            document.getElementById("id01")
+        element.innerHTML = "New Heading"
+    </script>
+
+    <p>JavaScript changed "Old Heading" to "New Heading".</p>
+    <hr>
+
+    <img id="image" src="smiley.gif" width="160" height="120">
+
+    <script>
+        document.getElementById("image").src = "landscape.jpg"
+    </script>
+
+    <p>The original image was smiley.gif, but the script changed it to landscape.jpg</p>
+    <hr>
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo01">
+        <h2>The XMLHttpRequest Object</h2>
+        <button type="button" onclick="loadDoc01()">Change Content</button>
+    </div>
+
+    <script>
+        function loadDoc01() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("demo01").innerHTML =
+                        this.responseText;
+                }
+            };
+            xhttp.open("GET", "ajax_info.txt", true);
+            xhttp.send();
+        }
+    </script>
+    <hr>
+
+    <div id="demo02">
+        <h2>The XMLHttpRequest Object</h2>
+
+        <button type="button" onclick="loadDoc02('jax_info.txt', myFunction01)">Change Content</button>
+    </div>
+
+    <script>
+        function loadDoc02(url, cFunction) {
+            var xhttp
+            xhttp = new XMLHttpRequest()
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    cFunction(this)
+                }
+            }
+            xhttp.open("GET", url, true)
+            xhttp.send()
+        }
+        function myFunction01(xhttp) {
+            document.getElementById("demo02").innerHTML = xhttp.responseText
+        }
+    </script>
+    <hr>
+
+    <div id="demo03">
+        <h2>The XMLHttpRequest Object</h2>
+        <button type="button" onclick="loadDoc03()">Change Content</button>
+    </div>
+
+    <script>
+        function loadDoc03() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("demo03").innerHTML =
+                        this.responseText;
+                }
+            };
+            xhttp.open("GET", "ajax_info.txt", true);
+            xhttp.send();
+        }
+    </script>
+    <hr>
+
+    <h2>The XMLHttpRequest Object</h2>
+
+    <p id="demo04"></p>
+
+    <script>
+        var xhttp, xmlDoc, txt, x, i;
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                xmlDoc = this.responseXML;
+                txt = "";
+                x = xmlDoc.getElementsByTagName("ARTIST");
+                for (i = 0; i < x.length; i++) {
+                    txt = txt + x[i].childNodes[0].nodeValue + "<br>";
+                }
+                document.getElementById("demo04").innerHTML = txt;
+            }
+        };
+        xhttp.open("GET", "cd_catalog.xml", true);
+        xhttp.send();
+    </script>
+    <hr>
+
+    <h2>The XMLHttpRequest Object</h2>
+
+    <p>The getAllResponseHeaders() function returns all the header information of a resource, like length, server-type,
+        content-type, last-modified, etc:</p>
+
+    <p id="demo05"></p>
+
+    <script>
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("demo05").innerHTML =
+                    this.getAllResponseHeaders();
+            }
+        };
+        xhttp.open("GET", "ajax_info.txt", true);
+        xhttp.send();
+    </script>
+    <hr>
+
+    <h2>The XMLHttpRequest Object</h2>
+
+    <p>The getResponseHeader() function is used to return specific header information from a resource, like length,
+        server-type, content-type, last-modified, etc:</p>
+
+    <p>Last modified: <span id="demo06"></span></p>
+
+    <script>
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("demo06").innerHTML =
+                    this.getResponseHeader("Last-Modified");
+            }
+        };
+        xhttp.open("GET", "ajax_info.txt", true);
+        xhttp.send();
+    </script>
+    <hr>
+</body>
+
+</html>

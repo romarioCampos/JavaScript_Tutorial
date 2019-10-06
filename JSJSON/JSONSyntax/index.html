@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Acess a JavaScript object:</p>
+
+    <p id="demo01"></p>
+
+    <script>
+        var myObj, x
+        myObj = { name: "John", age: 30, city: "New York" }
+        x = myObj.name
+        document.getElementById("demo01").innerHTML = x
+    </script>
+    <hr>
+
+    <p>Access a JavaScript object using the bracket notation:</p>
+
+    <p id="demo02"></p>
+
+    <script>
+        var myObj, x;
+        myObj = { name: "John", age: 30, city: "New York" };
+        x = myObj["name"];
+        document.getElementById("demo02").innerHTML = x;
+    </script>
+    <hr>
+
+    <p>Modify a JavaScript object:</p>
+
+    <p id="demo03"></p>
+
+    <script>
+        var myObj, x
+        myObj = { name: "John", age: 30, city: "New York" }
+        myObj.name = "Gilbert"
+        document.getElementById("demo03").innerHTML = myObj.name
+    </script>
+    <hr>
+
+    <p>Modify a JavaScript object using the bracket notation:</p>
+
+    <p id="demo04"></p>
+
+    <script>
+        var myObj, x
+        myObj = { name: "John", age: 30, city: "New York" }
+        myObj["name"] = "Gilbert"
+        document.getElementById("demo04").innerHTML = myObj.name
+    </script>
+    <hr>
+</body>
+
+</html>

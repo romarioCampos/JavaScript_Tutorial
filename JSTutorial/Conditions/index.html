@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Display "Goo da!" if the hour is less than 18:00:</p>
+
+    <p id="demo1">Good Evening!</p>
+
+    <script>
+        if (new date().getHours() < 18) {
+            document.getElementById("demo1").innerHTML = "Good day"
+        }
+    </script>
+    <hr>
+
+    <p>Click the button to display a time-based greeting:</p>
+
+    <button onclick="myFunction1()">Try it</button>
+
+    <p id="demo2"></p>
+
+    <script>
+        function myFunction1() {
+            var hour = new Date().getHours();
+            var greeting;
+            if (hour < 18) {
+                greeting = "Good day";
+            } else {
+                greeting = "Good evening";
+            }
+            document.getElementById("demo2").innerHTML = greeting;
+        }
+    </script>
+    <hr>
+
+    <p>Click the button to get a time-based greeting:</p>
+
+    <button onclick="myFunction2()">Try it</button>
+
+    <p id="demo"></p>
+
+    <script>
+        function myFunction2() {
+            var greeting;
+            var time = new Date().getHours();
+            if (time < 10) {
+                greeting = "Good morning";
+            } else if (time < 20) {
+                greeting = "Good day";
+            } else {
+                greeting = "Good evening";
+            }
+            document.getElementById("demo").innerHTML = greeting;
+        }
+    </script>
+
+    <hr>
+</body>
+
+</html>

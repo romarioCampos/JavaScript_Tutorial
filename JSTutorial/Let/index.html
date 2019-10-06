@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>JavaScript Scope</h2>
+
+    <p>A GLOBAL variable can be accessed from any scprit or function.</p>
+
+    <p id="demo1"></p>
+
+    <script>
+        var carName = "Volvo"
+        myFunction1()
+
+        function myFunction1() {
+
+            document.getElementById("demo1").innerHTML = "I can display " + carName
+        }
+    </script>
+    <hr>
+
+    <h2>JavaScript Scope</h2>
+
+    <p>Outside myFunction() carName is undefined.</p>
+
+    <p id="demo2"></p>
+
+    <p id="demo3"></p>
+
+    <script>
+        myFunction2();
+
+        function myFunction2() {
+            var carName = "Volvo";
+            document.getElementById("demo2").innerHTML = typeof carName + " " + carName;
+        }
+        document.getElementById("demo3").innerHTML = typeof carName;
+    </script>
+    <hr>
+
+    <h2>Declaring a Variable Using var</h2>
+
+    <p id="demo4"></p>
+
+    <script>
+        var x = 10
+        // Here x is 10
+        {
+            var x = 2
+            // Here x is 2
+        }
+        // Here x is 2
+        document.getElementById("demo4").innerHTML = x
+    </script>
+    <hr>
+
+    <h2>Declaring a Variable using let</h2>
+
+    <p id="demo5"></p>
+
+    <script>
+        var x = 10
+        //Here x is 10
+        {
+            let x = 2
+            // Here x is 2
+        }
+        // Here x is 10
+        document.getElementById("demo5").innerHTML = x
+    </script>
+    <hr>
+
+    <h2>JavaScript let</h2>
+
+    <p id="demo6"></p>
+
+    <script>
+        var i = 5
+        for (var i = 0; i < 10; i++) {
+            // some statements
+        }
+        document.getElementById("demo6").innerHTML = i
+    </script>
+    <hr>
+
+    <h2>JavaScript Global Variables</h2>
+
+    <p>In HTML, global variables defined with <b>var</b>, will become window variables.</p>
+
+    <p id="demo8"></p>
+
+    <script>
+        var carName = "Volvo"
+
+        // code here can use widow.carName
+        document.getElementById("demo8").innerHTML = "I can display " + window.carName
+    </script>
+    <hr>
+
+    <h2>JavaScript Global Variables</h2>
+
+    <p>In HTML, global variables defined with <b>let</b>, will not become window variables.</p>
+
+    <p id="demo9"></p>
+
+    <script>
+        let carName2 = "Volvo";
+
+        // code here can use window.carName
+        document.getElementById("demo9").innerHTML = "I can not display " + window.carName2;
+    </script>
+    <hr>
+
+    <h2>JavaScript Global Variables</h2>
+
+    <p>In HTML, global variables defined with <b>let</b>, will not become window variables.</p>
+
+    <p id="demo10"></p>
+
+    <script>
+        let carName3 = "Volvo"
+
+        //code here can use window.carName
+        document.getElementById("demo10").innerHTML = "I can not display " + window.carName3
+    </script>
+    <hr>
+
+    <h2>JavaScript let</h2>
+
+    <p>Redeclaring a JavaScript variable with <b>var</b> is allowed anywhere in a program:</p>
+
+    <p id="demo11"></p>
+
+    <script>
+        var x = 2
+        // Now x is 2
+
+        var x = 3
+        // Now x is 3
+
+        document.getElementById("demo11").innerHTML = x
+    </script>
+    <hr>
+
+    <h2>JavaScript Hoisting</h2>
+
+    <p>With <b>var</b>, you can use a variable before it is declared:</p>
+
+    <p id="demo12"></p>
+
+    <script>
+        carName = "Volvo";
+        document.getElementById("demo12").innerHTML = carName;
+        var carName;
+    </script>
+    <hr>
+</body>
+
+</html>

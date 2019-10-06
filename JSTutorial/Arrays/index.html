@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>JavaScript Arrays</h2>
+
+    <p id="demo1"></p>
+
+    <script>
+        var cars = ["Saab", "Volvo", "BMW"]
+        document.getElementById("demo1").innerHTML = cars
+    </script>
+    <hr>
+
+    <h2>JavaScript Arrays</h2>
+
+    <p id="demo2"></p>
+
+    <script>
+        var cars = [
+            "Saab",
+            "Volvo",
+            "BMW"
+        ]
+        document.getElementById("demo2").innerHTML = cars
+    </script>
+    <hr>
+
+    <h2>JavaScript Arrays</h2>
+
+    <p id="demo3"></p>
+
+    <script>
+        var cars = new Array("Saab", "Volvo", "BMW")
+        document.getElementById("demo3").innerHTML = cars
+    </script>
+    <hr>
+
+    <h2>JavaScript Arrays</h2>
+
+    <p>JavaScript array element are acessed using numeric indexes (starting from 0).</p>
+
+    <p id="demo4"></p>
+
+    <script>
+        var cars = ["Saab", "Volvo", "BMW"]
+        document.getElementById("demo4").innerHTML = cars[0]
+    </script>
+    <hr>
+
+    <h2>JavaScript Arrays</h2>
+
+    <p>JavaScript array elements are acessed using numeric indexes (starting from 0).</p>
+
+    <p id="demo5"></p>
+
+    <script>
+        var cars = ["Saab", "Volvo", "BMW"]
+        cars[0] = "Opel"
+        document.getElementById("demo5").innerHTML = cars
+    </script>
+    <hr>
+
+    <h2>JavaScript Arrays</h2>
+
+    <p>Arrays use numbers to acess its elements.</p>
+
+    <p id="demo6"></p>
+
+    <script>
+        var person = ["John", "Doe", 46]
+        document.getElementById("demo6").innerHTML = person[0]
+    </script>
+    <hr>
+
+    <h2>JavaScript Objects</h2>
+    <p>JavaScript uses names to acess object properties.</p>
+    <p id="demo7"></p>
+
+    <script>
+        var person = { firstName: "John", lastName: "Doe", age: 46 }
+        document.getElementById("demo7").innerHTML = person["firstName"]
+    </script>
+    <hr>
+
+    <h2>JavaScript Arrays</h2>
+    <p>The length property returns the length of an array.</p>
+
+    <p id="demo8"></p>
+
+    <script>
+        var fruits = ["Banna", "Orange", "Apple", "Mango"]
+        document.getElementById("demo8").innerHTML = fruits.length
+    </script>
+    <hr>
+
+    <h2>JavaScript Arrays</h2>
+
+    <p>JavaScript array elements are access using numeric indexes</p>
+
+    <p id="demo9"></p>
+
+    <script>
+        var fruits = ["Banana", "Orange", "Apple", "Mango"]
+        var first = fruits[0]
+        document.getElementById("demo9").innerHTML = first
+    </script>
+    <hr>
+
+    <h2>JavaScript Arrays</h2>
+
+    <p>JavaScript array elements are access using numeric indexes</p>
+
+    <p id="demo10"></p>
+
+    <script>
+        var fruits = ["Banana", "Orange", "Apple", "Mango"]
+        var last = fruits[fruits.length - 1]
+        document.getElementById("demo10").innerHTML = last
+    </script>
+    <hr>
+
+    <h2>JavaScript Arrays</h2>
+
+    <p>The best way to loop through an array is using a standard for loop:</p>
+
+    <p id="demo11"></p>
+
+    <script>
+        var fruits = ["Banana", "Orange", "Apple", "Mango"]
+        fLen = fruits.length
+
+        text = "<ul>"
+        for (var i = 0; i < fLen; i++) {
+            text += "<li>" + fruits[i] + "</li>"
+        }
+        text += "</ul>"
+
+        document.getElementById("demo11").innerHTML = text
+    </script>
+    <hr>
+
+    <h2>JavaScript Arrays</h2>
+
+    <p>Array.forEach() calls a function for each array element.</p>
+
+    <p>Array.forEach() is not supported in Internet Explorer 8 or earlier.</p>
+
+    <p id="demo12"></p>
+
+    <script>
+        var fruits, text
+        fruits = ["Banana", "Orange", "Apple", "Mango"]
+
+        text = "<ul>"
+        fruits.forEach(myFunction)
+        text += "</ul>"
+        document.getElementById("demo12").innerHTML = text
+
+        function myFunction(value) {
+            text += "<li>" + value + "</li>"
+        }
+    </script>
+    <hr>
+
+    <h2>JavaScript Arrays</h2>
+
+    <p>The push method appends a new element to an array.</p>
+
+    <button onclick="myFunction2()">Try it</button>
+
+    <p id="demo13"></p>
+
+    <script>
+        var fruits = ["Banana", "Orange", "Apple", "Mango"]
+        document.getElementById("demo13").innerHTML = fruits
+
+        function myFunction2() {
+            fruits.push("Lemon")
+            document.getElementById("demo13").innerHTML = fruits
+        }
+    </script>
+    <hr>
+
+    <h2>JavaScript Arrays</h2>
+
+    <p>The length property provides an easy way to append new elements to an array without using the push() method.</p>
+
+    <button onclick="myFunction3()">Try it</button>
+
+    <p id="demo14"></p>
+
+    <script>
+        var fruits = ["Banana", "Orange", "Apple", "Mango"]
+        document.getElementById("demo14").innerHTML = fruits
+
+        function myFunction3() {
+            fruits[fruits.length] = "Lemon"
+            document.getElementById("demo14").innerHTML = fruits
+        }
+    </script>
+    <hr>
+
+    <h2>JavaScript Arrays</h2>
+
+    <p>Adding elements with high indexes can create undefined "holes" in an array.</p>
+
+    <p id="demo15"></p>
+
+    <script>
+        var fruits, text, fLen
+        fruits = ["Banana", "Orange", "Apple", "Mango"]
+        fruits[6] = "Lemon"
+
+        fLen = fruits.length
+        text = ""
+        for (var i = 0; i < fLen; i++) {
+            text += fruits[i] + "<br>"
+        }
+        document.getElementById("demo15").innerHTML = text
+    </script>
+    <hr>
+
+    <h2>JavaScript Arrays</h2>
+
+    <p id="demo16"></p>
+
+    <script>
+        var person = []
+        person[0] = "John"
+        person[1] = "Doe"
+        person[2] = 46
+        document.getElementById("demo16").innerHTML = person[0] + " " + person.length
+    </script>
+    <hr>
+
+    <h2>JavaScript Arrays</h2>
+
+    <p>If you use a named index when accessing an array, JavaScript will redefine
+        the array to a standard object, and some array methods and properties will
+        produce undefined or incorrect results.</p>
+
+    <p id="demo17"></p>
+
+    <script>
+        var person = []
+        person["fristName"] = "John"
+        person["lastName"] = "Doe"
+        person["age"] = 46
+        document.getElementById("demo17").innerHTML = person[0] + " " + person.length
+    </script>
+    <hr>
+
+    <h2>JavaScript Arrays</h2>
+
+    <p>Avoid using new Array(). Use [] instead.</p>
+
+    <p id="demo18"></p>
+
+    <script>
+        // var points = new Array(40, 100, 1, 5, 25, 10)
+        var points = [40, 100, 1, 5, 25, 10]
+        document.getElementById("demo18").innerHTML = points[0]
+    </script>
+    <hr>
+
+    <h2>JavaScript Arrays</h2>
+
+    <p>Avoid using new Array().</p>
+
+    <p id="demo19"></p>
+
+    <script>
+        var points = new Array(40)
+        document.getElementById("demo19").innerHTML = points[0]
+    </script>
+    <hr>
+
+    <h2>JavaScript Arrays</h2>
+
+    <p>The typeof operator, when used on an array, returns object:</p>
+
+    <p id="demo20"></p>
+
+    <script>
+        var fruits = ["Banana", "Orange", "Apple", "Mango"]
+        document.getElementById("demo20").innerHTML = typeof fruits
+    </script>
+    <hr>
+
+    <h2>JavaScript Arrays</h2>
+
+    <p>The new ECMASCRIPT 5 method isArray returns true when used on an array:</p>
+
+    <p id="demo21"></p>
+
+    <script>
+        var fruits = ["Banana", "Orange", "Apple", "Mango"]
+        document.getElementById("demo21").innerHTML = Array.isArray(fruits)
+    </script>
+    <hr>
+
+    <h2>JavaScript Arrays</h2>
+
+    <p>This "home made" isArray() function returns true when used on an array:</p>
+
+    <p id="demo22"></p>
+
+    <script>
+        var fruits = ["Banana", "Orange", "Apple", "Mango"]
+        document.getElementById("demo22").innerHTML = isArray(fruits)
+
+        function isArray(myArray) {
+            return myArray.constructor.toString().indexOf("Array") > - 1
+        }
+    </script>
+    <hr>
+
+    <h2>JavaScript Array</h2>
+
+    <p>The instanceof operator returns true when on an array:</p>
+
+    <p id="demo23"></p>
+
+    <script>
+        var fruits = ["Banana", "Orange", "Apple", "Mango"]
+        document.getElementById("demo23").innerHTML = fruits instanceof Array
+    </script>
+    <hr>
+</body>
+
+</html>

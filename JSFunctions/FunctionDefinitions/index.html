@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>JavaScripts Functions</h2>
+
+    <p>This example calls a function which performs a calculation and returns the result:</p>
+
+    <p id="demo01"></p>
+
+    <script>
+        var x = myFunction01(4, 3)
+        document.getElementById("demo01").innerHTML = x
+
+        function myFunction01(a, b) {
+            return a * b
+        }
+    </script>
+    <hr>
+
+    <p>A function can be stored in a variable:</p>
+    <p id="demo02"></p>
+
+    <script>
+        var x = function (a, b) { return a * b }
+        document.getElementById("demo02").innerHTML = x
+    </script>
+    <hr>
+
+    <p>After a function has been stored in a variable, the variable can be used as a function:</p>
+
+    <p id="demo03"></p>
+
+    <script>
+        var x = function (a, b) { return a * b }
+        document.getElementById("demo03").innerHTML = x(4, 3)
+    </script>
+    <hr>
+
+    <p>JavaScript has an bulit-in function constructor.</p>
+    <p id="demo04"></p>
+
+    <script>
+        var myFunction02 = new Function("a", "b", "return a * b")
+        document.getElementById("demo04").innerHTML = myFunction02(4, 3)
+    </script>
+    <hr>
+
+    <p id="demo05"></p>
+
+    <script>
+        var myFunction03 = function (a, b) { return a * b }
+        document.getElementById("demo05").innerHTML = myFunction03(4, 3)
+    </script>
+    <hr>
+
+    <p>Functions can be invoked automatically without being called:</p>
+
+    <p id="demo06"></p>
+
+    <script>
+            (function () {
+
+                document.getElementById("demo06").innerHTML = "Hello! I called myself"
+            })()
+    </script>
+    <hr>
+
+    <p>Functions can be treated as values:</p>
+    <p>x = myFunction(4,3) or x = 12</p>
+    <p>In both cases, x becomes a number with the value of 12.</p>
+    <p id="demo07"></p>
+
+    <script>
+        function myFunction04(a, b) {
+            return a * b
+        }
+        var x = myFunction04(4, 3)
+        document.getElementById("demo07").innerHTML = x
+    </script>
+    <hr>
+
+    <p>Functions can be used in expressions.</p>
+    <p id="demo08"></p>
+
+    <script>
+        function myFunction(a, b) {
+            return a * b
+        }
+        var x = myFunction(4, 3) * 2
+        document.getElementById("demo08").innerHTML = x
+    </script>
+    <hr>
+
+    <p>The arguments.length property returns the number of arguments received by the function:</p>
+
+    <p id="demo09"></p>
+
+    <script>
+        function myFunction05(a, b) {
+            return arguments.length
+        }
+        document.getElementById("demo09").innerHTML = myFunction05(4, 3)
+    </script>
+    <hr>
+
+    <p>The toString() method returns the function as a string:</p>
+
+    <p id="demo10"></p>
+
+    <script>
+        function myFunction06(a, b) {
+            return a * b
+        }
+        document.getElementById("demo10").innerHTML = myFunction06.toString()
+    </script>
+    <hr>
+
+    <h2>JavaScript Arrow Functions</h2>
+
+    <p>With arrow functions, you don't have to type the function keyword, the return keyword, and the curly brackets.
+    </p>
+
+    <p>Arrow functions are not supported in IE11 or earlier.</p>
+
+    <p id="demo11"></p>
+
+    <script>
+        const x = (x, y) => x * y;
+        document.getElementById("demo11").innerHTML = x(5, 5);
+    </script>
+    <hr>
+
+    <h2>JavaScript Arrow Functions</h2>
+
+    <p>Arrow functions are not supported in IE11 or earlier.</p>
+
+    <p id="demo12"></p>
+
+    <script>
+        const x = (x, y) => { return x * y };
+        document.getElementById("demo12").innerHTML = x(5, 5);
+    </script>
+    <hr>
+</body>
+
+</html>

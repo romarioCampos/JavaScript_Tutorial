@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Access a JSON object using dot notation:</p>
+
+    <p id="demo01"></p>
+
+    <script>
+        var myObj, x
+        myObj = { "name": "John", "age": 30, "car": null }
+        x = myObj.name
+        document.getElementById("demo01").innerHTML = x
+    </script>
+    <hr>
+
+    <p>Access a JSON object using bracket notation:</p>
+
+    <p id="demo02"></p>
+
+    <script>
+        var myObj, x;
+        myObj = { "name": "John", "age": 30, "car": null };
+        x = myObj["name"];
+        document.getElementById("demo02").innerHTML = x;
+    </script>
+    <hr>
+
+    <p>How to loop through all properties in a JSON object.</p>
+
+    <p id="demo03"></p>
+
+    <script>
+        var myObj, x
+        myObj = { "name": "John", "age": 30, "car": null }
+        for (x in myObj) {
+            document.getElementById("demo03").innerHTML += x + "<br>"
+        }
+    </script>
+    <hr>
+
+    <p>Use bracket notation to access the property values.</p>
+
+    <p id="demo04"></p>
+
+    <script>
+        var myObj, x;
+        myObj = { "name": "John", "age": 30, "car": null };
+        for (x in myObj) {
+            document.getElementById("demo04").innerHTML += myObj[x] + "<br>";
+        }
+    </script>
+    <hr>
+
+    <p>How to access nested JSON objects.</p>
+
+    <p id="demo05"></p>
+
+    <script>
+        var myObj = {
+            "name": "John",
+            "age": 30,
+            "cars": {
+                "car1": "Ford",
+                "car2": "BMW",
+                "car3": "Fiat"
+            }
+        }
+        document.getElementById("demo05").innerHTML += myObj.cars.car2 + "<br>"
+        //or
+        document.getElementById("demo05").innerHTML += myObj.cars["car2"]
+    </script>
+    <hr>
+
+    <p>How to modify values in a JSON object.</p>
+
+    <p id="demo06"></p>
+
+    <script>
+        var myObj, i, x = "";
+        myObj = {
+            "name": "John",
+            "age": 30,
+            "cars": {
+                "car1": "Ford",
+                "car2": "BMW",
+                "car3": "Fiat"
+            }
+        }
+        myObj.cars.car2 = "Mercedes"
+
+        for (i in myObj.cars) {
+            x += myObj.cars[i] + "<br>"
+        }
+
+        document.getElementById("demo06").innerHTML = x
+    </script>
+    <hr>
+
+    <p>How to modify values in a JSON object using the bracket notation.</p>
+
+    <p id="demo07"></p>
+
+    <script>
+        var myObj, i, x = "";
+        myObj = {
+            "name": "John",
+            "age": 30,
+            "cars": {
+                "car1": "Ford",
+                "car2": "BMW",
+                "car3": "Fiat"
+            }
+        }
+        myObj.cars["car2"] = "Mercedes"
+
+        for (i in myObj.cars) {
+            x += myObj.cars[i] + "<br>"
+        }
+
+        document.getElementById("demo07").innerHTML = x
+    </script>
+    <hr>
+    <p>How to delete properties of a JSON objet.</p>
+
+    <p id="demo08"></p>
+
+    <script>
+        var myObj, i, x = ""
+        myObj = {
+            "name": "John",
+            "age": 30,
+            "cars": {
+                "car1": "Ford",
+                "car2": "BMW",
+                "car3": "Fiat"
+            }
+        }
+        delete myObj.cars.car2
+
+        for (i in myObj.cars) {
+            x += myObj.cars[i] + "<br>"
+        }
+
+        document.getElementById("demo08").innerHTML = x
+    </script>
+    <hr>
+</body>
+
+</html>

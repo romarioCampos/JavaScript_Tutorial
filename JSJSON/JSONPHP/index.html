@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Get data as JSON from a PHP file on the server.</h2>
+
+    <p id="demo01"></p>
+
+    <script>
+        var xmlhttp = new XMLHttpRequest()
+
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                myObj = JSON.parse(this.responseText)
+
+                document.getElementById("demo01").innerHTML = myObj.name
+            }
+        }
+        xmlhttp.open("GET", "demo_file.php", true)
+        xmlhttp.send()
+    </script>
+    <hr>
+
+    <h2>Get data as JSON from a PHP file, and convert it into a JavaScript array.</h2>
+
+    <p id="demo02"></p>
+
+    <script>
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var myObj = JSON.parse(this.responseText);
+                document.getElementById("demo02").innerHTML = myObj[2];
+            }
+        };
+        xmlhttp.open("GET", "demo_file_array.php", true);
+        xmlhttp.send();
+    </script>
+    <hr>
+
+    <h2>Get data as JSON from a PHP file on the server.</h2>
+
+    <p>The JSON received from the PHP file:</p>
+
+    <p id="demo03"></p>
+
+    <script>
+        var obj, dbParam, xmlhttp;
+        obj = { "table": "customers", "limit": 10 };
+        dbParam = JSON.stringify(obj);
+        xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("demo03").innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("GET", "json_demo_db.php?x=" + dbParam, true);
+        xmlhttp.send();
+    </script>
+    <hr>
+
+    <h2>Get data as JSON from a PHP file on the server.</h2>
+
+    <p id="demo04"></p>
+
+    <script>
+        var obj, dbParam, xmlhttp, myObj, x, txt = "";
+        obj = { "table": "customers", "limit": 10 };
+        dbParam = JSON.stringify(obj);
+        xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                myObj = JSON.parse(this.responseText);
+                for (x in myObj) {
+                    txt += myObj[x].name + "<br>";
+                }
+                document.getElementById("demo04").innerHTML = txt;
+            }
+        };
+        xmlhttp.open("GET", "json_demo_db.php?x=" + dbParam, true);
+        xmlhttp.send();
+    </script>
+
+    <p>Try changing the "table" property from "customers" to "products".</p>
+    <hr>
+
+    <h2>Use the HTTP method POST to send data to the PHP file.</h2>
+
+    <p id="demo05"></p>
+
+    <script>
+        var obj, dbParam, xmlhttp, myObj, x, txt = "";
+        obj = { "table": "customers", "limit": 10 };
+        dbParam = JSON.stringify(obj);
+        xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                myObj = JSON.parse(this.responseText);
+                for (x in myObj) {
+                    txt += myObj[x].name + "<br>";
+                }
+                document.getElementById("demo05").innerHTML = txt;
+            }
+        };
+        xmlhttp.open("POST", "json_demo_db_post.php", true);
+        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlhttp.send("x=" + dbParam);
+    </script>
+
+    <p>Try changing the "table" property from "customers" to "products".</p>
+</body>
+
+</html>

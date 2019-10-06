@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>JavaScript Functions</h2>
+
+    <p>The global function (myFunction) returns the product of the arguments (a,b):</p>
+
+    <p id="demo01"></p>
+
+    <script>
+        function myFunction01(a, b) {
+            return a * b
+        }
+        document.getElementById("demo01").innerHTML = myFunction01(10, 2)
+    </script>
+    <hr>
+
+    <h2>JavaScript Functions</h2>
+
+    <p>Global functions automatically become window methods. Invoking myFunction() is the same as invoking
+        window.myFunction().</p>
+
+    <p id="demo02"></p>
+
+    <script>
+        function myFunction02(a, b) {
+            return a * b
+        }
+        document.getElementById("demo02").innerHTML = window.myFunction02(10, 2)
+    </script>
+    <hr>
+
+    <h2>JavaScript Functions</h2>
+
+    <p>In HTML the value of <b>this</b>, in a global function, is the window object.</p>
+
+    <p id="demo03"></p>
+
+    <script>
+        var x = myFunction03()
+        function myFunction03() {
+            return this
+        }
+        document.getElementById("demo03").innerHTML = x
+    </script>
+    <hr>
+
+    <h2>JavaScript Functions</h2>
+
+    <p>myObject.fullName() will return John Doe:</p>
+
+    <p id="demo04"></p>
+
+    <script>
+        var myObject = {
+            firstName: "John",
+            lastName: "Doe",
+            fullName: function () {
+                return this.firstName + " " + this.lastName
+            }
+        }
+        document.getElementById("demo04").innerHTML = myObject.fullName()
+    </script>
+    <hr>
+
+    <h2>JavaScript Functions</h2>
+
+    <p>The value of <b>this</b>, in an object method, is the owner object.</p>
+
+    <p id="demo05"></p>
+
+    <script>
+        var myObject = {
+            firstName: "John",
+            lastName: "Doe",
+            fullName: function () {
+                return this
+            }
+        }
+        document.getElementById("demo05").innerHTML = myObject.fullName()
+    </script>
+    <hr>
+
+    <h2>JavaScript Functions</h2>
+
+    <p>In this example, myFunction is a function constructor:</p>
+
+    <p id="demo06"></p>
+
+    <script>
+        function myFunction04(arg1, arg2) {
+            this.firstName = arg1
+            this.lastName = arg2
+        }
+
+        var x = new
+            myFunction04("John", "Doe")
+        document.getElementById("demo06").innerHTML = x.firstName
+    </script>
+    <hr>
+</body>
+
+</html>

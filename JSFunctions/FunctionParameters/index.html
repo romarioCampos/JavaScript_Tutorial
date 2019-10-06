@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Setting a default value to a fuction parameter.</p>
+    <p id="demo01"></p>
+
+    <script>
+        function myFunction01(x, y) {
+            if (y === undefined) {
+                y = 0
+            }
+            return x * y
+        }
+        document.getElementById("demo01").innerHTML = myFunction01(4)
+    </script>
+    <hr>
+
+    <p>Finding the largest number.</p>
+    <p id="demo02"></p>
+
+    <script>
+        function findMax() {
+            var max = -Infinity
+            for (var i = 0; i < arguments.length; i++) {
+                if (arguments[i] > max) {
+                    max = arguments[i]
+                }
+            }
+            return max
+        }
+        document.getElementById("demo02").innerHTML = findMax(4, 5, 6)
+    </script>
+    <hr>
+
+    <p>Sum of all arguments:</p>
+    <p id="demo03"></p>
+
+    <script>
+        function sumAll() {
+            var sum = 0
+            for (var i = 0; i < arguments.length; i++) {
+                sum += arguments[i]
+            }
+            return sum
+        }
+        document.getElementById("demo03").innerHTML = sumAll(1, 123, 500, 115, 44, 88)
+    </script>
+    <hr>
+</body>
+
+</html>

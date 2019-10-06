@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>JavaScript Numbers</h2>
+
+    <p>Numbers can be written with or without decimals:</p>
+
+    <p id="demo1"></p>
+
+    <script>
+        var x = 3.14
+        var y = 3
+        document.getElementById("demo1").innerHTML = x + "<br>" + y
+    </script>
+    <hr>
+
+    <h2>JavaScript Numbers</h2>
+
+    <p>Extra large or extra small numbers can be written with scientific (exponent) notation:</p>
+
+    <p id="demo2"></p>
+
+    <script>
+        var x = 123e5
+        var y = 123e-5
+        document.getElementById("demo2").innerHTML = x + "<br>" + y
+    </script>
+    <hr>
+
+    <h2>JavaScript Numbers</h2>
+
+    <p>Integers (numbers without a period or exponent notation) are accurate up to 15 digits:</p>
+
+    <p id="demo3"></p>
+
+    <script>
+        var x = 999999999999999
+        var y = 9999999999999999
+        document.getElementById("demo3").innerHTML = x + "<br>" + y
+    </script>
+    <hr>
+
+    <h2>JavaScript Numbers</h2>
+
+    <p>Floating point arithmetic is not always 100% accurate.</p>
+
+    <p id="demo4"></p>
+
+    <script>
+        var x = 0.2 + 0.1
+        document.getElementById("demo4").innerHTML = "0.2 + 0.1 = " + x
+    </script>
+    <hr>
+
+    <h2>JavaScript Numbers</h2>
+
+    <p>Floating point arithmetic is not always 100% accurate.</p>
+    <p id="demo5"></p>
+
+    <p>But it helps to multiply and divide:</p>
+
+    <p id="demo6"></p>
+
+    <script>
+        var x = 0.2 + 0.1
+        document.getElementById("demo5").innerHTML = "0.2 + 0.1 = " + x
+        var y = (0.2 * 10 + 0.1 * 10) / 10
+        document.getElementById("demo6").innerHTML = "0.2 + 0.1 = " + y
+    </script>
+    <hr>
+
+    <h2>JavaScript Numbers</h2>
+
+    <p>If you add two numbers, the result will be a number:</p>
+
+    <p id="demo8"></p>
+
+    <script>
+        var x = 10
+        var y = 20
+        var z = x + y
+        document.getElementById("demo8").innerHTML = z
+    </script>
+    <hr>
+
+    <h2>JavaScript Numbers</h2>
+
+    <p>If you add two numeric strings, the result will be a concatenated string:</p>
+
+    <p id="demo9"></p>
+
+    <script>
+        var x = "10"
+        var y = "20"
+        var z = x + y
+        document.getElementById("demo9").innerHTML = z
+    </script>
+    <hr>
+
+    <h2>JavaScript Numbers</h2>
+
+    <p>If you add two numeric strings, the result will be a concatenated string:</p>
+
+    <p id="demo10"></p>
+
+    <script>
+        var x = 10
+        var y = "20"
+        var z = x + y
+        document.getElementById("demo10").innerHTML = z
+    </script>
+    <hr>
+
+    <h2>JavaScript Numbers</h2>
+
+    <p>If you add two numeric strings, the result will be a concatenated string:</p>
+
+    <p id="demo11"></p>
+
+    <script>
+        var x = "10"
+        var y = 20
+        var z = x + y
+        document.getElementById("demo11").innerHTML = z
+    </script>
+    <hr>
+
+    <h2>JavaScript Numbers</h2>
+
+    <p>A common mistake is to expect this result to be 30:</p>
+
+    <p id="demo12"></p>
+
+    <script>
+        var x = 10
+        var y = 20
+        document.getElementById("demo12").innerHTML = "The result is: " + x + y
+    </script>
+    <hr>
+
+    <h2>JavaScript Numbers</h2>
+
+    <p>A common mistake is to expect this result to be 102030:</p>
+
+    <p id="demo13"></p>
+
+    <script>
+        var x = 10
+        var y = 20
+        var result = x + y + "30"
+        document.getElementById("demo13").innerHTML = result
+    </script>
+    <hr>
+
+    <h2>JavaScript Numbers</h2>
+
+    <p>JavaScript will try to convert strings to numbers when dividing:</p>
+
+    <p id="demo14"></p>
+
+    <script>
+        var x = "100"
+        var y = "10"
+        var z = x / y
+        document.getElementById("demo14").innerHTML = z
+    </script>
+    <hr>
+
+    <h2>JavaScript Numbers</h2>
+
+    <p>JavaScript will try to convert strings to numbers when multiplying:</p>
+
+    <p id="demo15"></p>
+
+    <script>
+        var x = "100"
+        var y = "10"
+        var z = x * y
+        document.getElementById("demo15").innerHTML = z
+    </script>
+    <hr>
+
+    <h2>JavaScript Numbers</h2>
+
+    <p>JavaScript will try to convert strings to numbers when multiplying:</p>
+
+    <p id="demo16"></p>
+
+    <script>
+        var x = "100"
+        var y = "10"
+        var z = x - y
+        document.getElementById("demo16").innerHTML = z
+    </script>
+    <hr>
+
+    <h2>JavaScript Numbers</h2>
+
+    <p>JavaScript will NOT convert strings to numbers when adding:</p>
+
+    <p id="demo17"></p>
+
+    <script>
+        var x = "100";
+        var y = "10";
+        var z = x + y
+        document.getElementById("demo17").innerHTML = z
+    </script>
+    <hr>
+
+    <h2>JavaScript Numbers</h2>
+
+    <p>A number divided by a non-numeric string becomes NaN (Not a Number):</p>
+
+    <p id="demo18"></p>
+
+    <script>
+        document.getElementById("demo18").innerHTML = 100 / "Apple"
+    </script>
+    <hr>
+
+    <h2>JavaScript Number</h2>
+
+    <p>A number divided by a numeric string becomes a number:</p>
+
+    <p id="demo19"></p>
+
+    <script>
+        document.getElementById("demo19").innerHTML = 100 / "10"
+    </script>
+    <hr>
+
+    <h2>JavaScript Number</h2>
+
+    <p>You can use the global JavaScript function isNaN() to find out if a value is a number:</p>
+
+    <p id="demo20"></p>
+
+    <script>
+        var x = 100 / "Apple"
+        document.getElementById("demo20").innerHTML = isNaN(x)
+    </script>
+    <hr>
+
+    <h2>JavaScript Numbers</h2>
+
+    <p>If you use NaN in a mathematical operation, the result will alsobe NaN:</p>
+
+    <p id="demo21"></p>
+
+    <script>
+        var x = NaN
+        var y = 5
+        document.getElementById("demo21").innerHTML = x + y
+    </script>
+    <hr>
+
+    <h2>JavaScript Numbers</h2>
+
+    <p>If you use NaN in a mathematical operation, the result can be a concatenated:</p>
+
+    <p id="demo22"></p>
+
+    <script>
+        var x = NaN
+        var y = "5"
+        document.getElementById("demo22").innerHTML = x + y
+    </script>
+    <hr>
+
+    <h2>JavaScript Numbers</h2>
+
+    <p>The typeof NaN is number:</p>
+
+    <p id="demo23"></p>
+
+    <script>
+        var x = NaN
+        document.getElementById("demo23").innerHTML = typeof x
+    </script>
+    <hr>
+
+    <h2>JavaScript Numbers</h2>
+
+    <p>Infinity is returned if you calculate a number outside the largest possible numer:</p>
+
+    <p id="demo24"></p>
+
+    <script>
+        var myNumber = 2
+        var txt = ""
+        while (myNumber != Infinity) {
+            myNumber = myNumber * myNumber
+            txt = txt + myNumber + "<br>"
+        }
+        document.getElementById("demo24").innerHTML = txt
+    </script>
+    <hr>
+
+    <h2>JavaScript Numbers</h2>
+
+    <p>Division by zero generates Infinity;</p>
+
+    <p id="demo25"></p>
+
+    <script>
+        var x = 2 / 0
+        var y = -2 / 0
+        document.getElementById("demo25").innerHTML = x + "<br>" + y
+    </script>
+    <hr>
+
+    <h2>JavaScript Number</h2>
+
+    <p>Infinity is a number:</p>
+
+    <p id="demo26"></p>
+
+    <script>
+        var x = Infinity
+        document.getElementById("demo26").innerHTML = typeof x
+    </script>
+    <hr>
+
+    <h2>JavaScript Numbers</h2>
+
+    <p>Numeric constants, preceded by 0x, are interpreted as hexadecimal:</p>
+
+    <p id="demo27"></p>
+
+    <script>
+        var x = 0xFF
+        document.getElementById("demo27").innerHTML = "0xFF = " + x
+    </script>
+    <hr>
+
+    <h2>JavaScript Numbers</h2>
+
+    <p>The toString() method can output numbers from base 2 to 36:</p>
+
+    <p id="demo28"></p>
+
+    <script>
+        var myNumber = 32
+        document.getElementById("demo28").innerHTML =
+            "32 = " + "<br>" +
+            " Decimal " + myNumber.toString(10) + "<br>" +
+            " Hexadecimal " + myNumber.toString(16) + "<br>" +
+            " Octal " + myNumber.toString(8) + "<br>" +
+            " Binary " + myNumber.toString(2)
+    </script>
+    <hr>
+
+    <h2>JavaScript Numbers</h2>
+
+    <p>A number can be an object, but there is no need to create a number as an object.</p>
+
+    <p id="demo29"></p>
+
+    <script>
+        var x = 123
+        var y = new Number(123)
+        document.getElementById("demo29").innerHTML = typeof x + "<br>" + typeof y
+    </script>
+    <hr>
+
+    <h2>JavaScript Numbers</h2>
+
+    <p>Never create numbers as objects.</p>
+    <p>Numbers and objects cannot be safely compared.</p>
+
+    <p id="demo30"></p>
+
+    <script>
+        var x = 500 // x is a number
+        var y = new Number(500) // y is a number
+        document.getElementById("demo30").innerHTML = (x == y)
+    </script>
+    <hr>
+
+    <h2>JavaScript Numbers</h2>
+
+    <p>Never create numbers as objects.</p>
+    <p>Numbers and objects cannot be safely compared.</p>
+
+    <p id="demo31"></p>
+
+    <script>
+        var x = 500 // x is a number
+        var y = new Number(500) // y is a number
+        document.getElementById("demo31").innerHTML = (x === y)
+    </script>
+    <hr>
+
+    <h2>JavaScript Numbers</h2>
+
+    <p>Never create numbers as objects.</p>
+    <p>Numbers and objects cannot be safely compared.</p>
+
+    <p id="demo32"></p>
+
+    <script>
+        var x = new Number(500) // x is an object
+        var y = new Number(500) // y is an object
+        document.getElementById("demo32").innerHTML = (x == y)
+    </script>
+    <hr>
+</body>
+
+</html>

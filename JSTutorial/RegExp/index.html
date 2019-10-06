@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>JavaScript String Methods</h2>
+
+    <p>Search a string for "W3Schools", and display the position of the match:</p>
+
+    <p id="demo1"></p>
+
+    <script>
+        var str = "Visit W3Schools!"
+        var n = str.search("W3Schools")
+        document.getElementById("demo1").innerHTML = n
+    </script>
+    <hr>
+
+    <h2>JavaScript Regular Expressions</h2>
+
+    <p>Search a tring for "W3Schools", and dsiplay the position of the match:</p>
+
+    <p id="demo2"></p>
+
+    <script>
+        var str = "Visit W3Schools!"
+        var n = str.search(/w3Schools/i)
+        document.getElementById("demo2").innerHTML = n
+    </script>
+    <hr>
+
+    <h2>JavaScript String Methods</h2>
+
+    <p>Replace "Microsoft" with "W3Schools" in the paragraph below:</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="demo3">Please visit Microsoft!</p>
+
+    <script>
+        function myFunction() {
+            var str = document.getElementById("demo3").innerHTML
+            var txt = str.replace("Microsoft", "W3Schools")
+
+            document.getElementById("demo3").innerHTML = txt
+        }
+    </script>
+    <hr>
+
+    <h2>JavaScript Regular Expressions</h2>
+
+    <p>Replace "microsoft" with "W3Schools" in the paragraph below:</p>
+
+    <button onclick="myFunction2()">Try it</button>
+
+    <p id="demo4">Please visit Microsoft and Microsoft!</p>
+
+    <script>
+        function myFunction2() {
+            var str = document.getElementById("demo4").innerHTML;
+            var txt = str.replace(/microsoft/i, "W3Schools");
+            document.getElementById("demo4").innerHTML = txt;
+        }
+    </script>
+    <hr>
+
+    <p>Click the button to do a case-insensitive search for "w3schools" in a string.</p>
+
+    <button onclick="myFunction3()">Try it</button>
+
+    <p id="demo5"></p>
+
+    <script>
+        function myFunction3() {
+            var str = "Visit W3Schools"
+            var patt1 = /w3schools/i
+            var result = str.match(patt1)
+
+            document.getElementById("demo5").innerHTML = result
+        }
+    </script>
+    <hr>
+
+    <p>Click the button to do a global search for "is" in a string.</p>
+
+    <button onclick="myFunction4()">Try it</button>
+
+    <p id="demo6"></p>
+
+    <script>
+        function myFunction4() {
+            var str = "Is this all there is?"
+            var patt1 = /is/g
+            var result = str.match(patt1)
+
+            document.getElementById("demo6").innerHTML = result
+        }
+    </script>
+    <hr>
+
+    <p>Click the button to do a multiline search for "is" at the beginning of each line in a string.</p>
+
+    <button onclick="myFunction5()">Try it</button>
+
+    <p id="demo7"></p>
+
+    <script>
+        function myFunction5() {
+            var str = "\nIs th\nis it?"
+            var patt1 = /^is/m
+            var result = str.match(patt1)
+
+            document.getElementById("demo7").innerHTML = result
+        }
+    </script>
+    <hr>
+
+    <p>Click the button to do a global search for the character "h" in a string.</p>
+
+    <button onclick="myFunction6()">Try it</button>
+
+    <p id="demo8"></p>
+
+    <script>
+        function myFunction6() {
+            var str = "Is this all there is?"
+            var patt1 = /[h]/g
+            var result = str.match(patt1)
+
+            document.getElementById("demo8").innerHTML = result
+        }
+    </script>
+    <hr>
+
+    <p>Click the button to do a global search for the numbers 1 to 4 in a string.</p>
+
+    <button onclick="myFunction7()">Try it</button>
+
+    <p id="demo9"></p>
+
+    <script>
+        function myFunction7() {
+            var str = "123456789"
+            var patt1 = /[1-4]/g
+            var result = str.match(patt1)
+
+            document.getElementById("demo9").innerHTML = result
+        }
+    </script>
+    <hr>
+
+    <p>Click the button to do a global search for any of the specified alternatives (red|green).</p>
+
+    <button onclick="myFunction8()">Try it</button>
+
+    <p id="demo10"></p>
+
+    <script>
+        function myFunction8() {
+            var str = "re, green, red, green, gren, gr, blue, yellow"
+            var patt1 = /(red|green)/g
+            var result = str.match(patt1)
+
+            document.getElementById("demo10").innerHTML = result
+        }
+    </script>
+    <hr>
+
+    <p>Click the button to do a global search for digits in a string.</p>
+
+    <button onclick="myFunction9()">Try it</button>
+
+    <p id="demo11"></p>
+
+    <script>
+        function myFunction9() {
+            var str = "Give 100%!"
+            var patt1 = /\d/g
+            var result = str.match(patt1)
+
+            document.getElementById("demo11").innerHTML = result
+        }
+    </script>
+    <hr>
+
+    <p>Click the button to do a global search for whitespace characters in a string.</p>
+
+    <button onclick="myFunction10()">Try it</button>
+
+    <p id="demo12"></p>
+
+    <script>
+        function myFunction10() {
+            var str = "Is this all there is?"
+            var patt1 = /\s/g
+            var result = str.match(patt1)
+
+            document.getElementById("demo12").innerHTML = result
+        }
+    </script>
+    <hr>
+
+    <p>Search for the characters "LO" <br>int the <strong>beginning</strong> of a word in the phrase:<br>
+        "HELLO, LOOK AT YOU!"</p>
+
+    <p>Found in position: <span id="demo13"></span></p>
+
+    <script>
+        var str = "HELLO, LOOK AT YOU!"
+        var patt1 = /\bLO/
+        var result = str.search(patt1)
+        document.getElementById("demo13").innerHTML = result
+    </script>
+    <hr>
+
+    <p>
+        Search for the characters<br>
+        "LO"
+        <br>in the <strong>end</strong> of a word in the phrase:<br>
+        "HELLO, LOOK AT YOU!"
+    </p>
+
+    <p>Found in position: <span id="demo14"></span></p>
+
+    <script>
+        var str = "HELLO, LOOK AT YOU!";
+        var patt1 = /LO\b/;
+        var result = str.search(patt1);
+        document.getElementById("demo14").innerHTML = result;
+    </script>
+    <hr>
+
+    <p>Click the button to do a global search for the hexadecimal number 0057 (W) in a string.</p>
+
+    <button onclick="myFunction11()">Try it</button>
+
+    <p id="demo15"></p>
+
+    <script>
+        function myFunction11() {
+            var str = "Visit W3Schools. Hello World!"
+            var patt1 = /\u0057/g
+            var result = str.match(patt1)
+
+            document.getElementById("demo15").innerHTML = result
+        }
+    </script>
+    <hr>
+
+    <p>Click the button to do a global search for at least one "o" in a string.</p>
+
+    <button onclick="myFunction12()">Try it</button>
+
+    <p id="demo16"></p>
+
+    <script>
+        function myFunction12() {
+            var str = "Hellooo World! Hello W3Schools!"
+            var patt1 = /o+/g
+            var result = str.match(patt1)
+
+            document.getElementById("demo16").innerHTML = result
+        }
+    </script>
+    <hr>
+
+    <p>Click the button to do a global search for an "l", followed by zero or more "o" characters.</p>
+
+    <button onclick="myFunction13()">Try it</button>
+
+    <p id="demo17"></p>
+
+    <script>
+        function myFunction13() {
+            var str = "Hellooo World! Hello W3Schools!"
+            var patt1 = /lo*/g
+            var result = str.match(patt1)
+
+            document.getElementById("demo17").innerHTML = result
+        }
+    </script>
+    <hr>
+
+    <p>Click the button to do a global search for a "1", followed by zero or one "0" characters.</p>
+
+    <button onclick="myFunction14()">Try it</button>
+
+    <p id="demo18"></p>
+
+    <script>
+        function myFunction14() {
+            var str = "1, 100 or 1000?"
+            var patt1 = /10?/g
+            var result = str.match(patt1)
+
+            document.getElementById("demo18").innerHTML = result
+        }
+    </script>
+    <hr>
+
+    <h2>JavaScript Regular Expressions</h2>
+
+    <p>Search for an "e" in the next paragraph:</p>
+
+    <p id="p01">The best things in life are free!</p>
+
+    <p id="demo19"></p>
+
+    <script>
+        text =
+            document.getElementById("p01").innerHTML
+        document.getElementById("demo19").innerHTML = /e/.test(text)
+    </script>
+    <hr>
+
+    <h2>JavaScript regular Expressions</h2>
+
+    <p id="demo20"></p>
+
+    <script>
+        var obj = /e/.exec("The best things in life are free!")
+        document.getElementById("demo20").innerHTML =
+            "Found " + obj[0] + " in postion " + obj.index + " in the text: " + obj.input
+    </script>
+    <hr>
+</body>
+
+</html>

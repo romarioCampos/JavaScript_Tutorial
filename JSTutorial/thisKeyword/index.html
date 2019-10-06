@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>The JavaScript <b>this</b> Keyword</h2>
+
+    <p>In this example, <b>this</b> represents the <b>person</b> object.</p>
+    <p>Because the person object "owns" the fullName method.</p>
+
+    <p id="demo1"></p>
+
+    <script>
+        // Create an object:
+        var person = {
+            firstName: "Jonh",
+            lastName: "Doe",
+            id: 5566,
+            fullName: function () {
+                return this.firstName + " " + this.lastName
+            }
+        }
+
+        // Display data from the obejct:
+        document.getElementById("demo1").innerHTML = person.fullName()
+    </script>
+    <hr>
+
+    <h2>The JavaScript <b>this</b> Keyword</h2>
+
+    <p>In this example, <b>this</b> represents the <b>person</b> object.</p>
+    <p>Because the person object "owns" the fullName method.</p>
+
+    <p id="demo2"></p>
+
+    <script>
+        // Create an object:
+        var person = {
+            firstName: "John",
+            lastName: "Doe",
+            id: 5566,
+            fullName: function () {
+                return this.firstName + " " + this.lastName;
+            }
+        };
+
+        // Display data from the object:
+        document.getElementById("demo2").innerHTML = person.fullName();
+    </script>
+    <hr>
+
+    <h2>The JavaScript <b>this</b> Keyword</h2>
+
+    <p>In this example, <b>this</b> refers to the window Object:</p>
+
+    <p id="demo3"></p>
+
+    <script>
+        var x = this
+        document.getElementById("demo3").innerHTML = x
+    </script>
+    <hr>
+
+    <h2>The JavaScript <b>this</b> Keyword</h2>
+
+    <p>Int this example, <b>this</b> refers to the window Object:</p>
+
+    <p id="demo4"></p>
+
+    <script>
+        "use strict"
+        var x = this
+        document.getElementById("demo4").innerHTML = x
+    </script>
+    <hr>
+
+    <h2>The JavaScript <b>this</b> Keyword</h2>
+
+    <p>In this example, <b>this</b> represents the obejct that "owns" myFunction:</p>
+
+    <p id="demo5"></p>
+
+    <script>
+        document.getElementById("demo5").innerHTML = myFunction1()
+        function myFunction1() {
+            return this
+        }
+    </script>
+    <hr>
+
+    <h2>The JavaScript <b>this</b> Keyword</h2>
+
+    <p>In a function, by default, <b>this</b> refers to the Global object.</p>
+    <p>In strict mode, <b>this</b> is <b>undefined</b>, because strict mode does not allow default binding:</p>
+
+    <p id="demo6"></p>
+
+    <script>
+        "use strict"
+        document.getElementById("demo6").innerHTML = myFunction2()
+        function myFunction2() {
+            return this
+        }
+    </script>
+    <hr>
+
+    <h2>The JavaScript <b>this</b> Keyword</h2>
+
+    <button onclick="this.style.display='none'">Click to remove Me!</button>
+    <hr>
+
+    <h2>The JavaScript <b>this</b> Keyword</h2>
+
+    <p>In this example, <b>this</b> represents the person object that "owns" the fullName method.</p>
+
+    <p id="demo7"></p>
+
+    <script>
+        // Create an object:
+        var person = {
+            firstName: "John",
+            lastName: "Doe",
+            id: 5566,
+            myFunction3: function () {
+                return this;
+            }
+        };
+
+        // Display data from the object:
+        document.getElementById("demo7").innerHTML = person.myFunction3();
+    </script>
+    <hr>
+
+    <h2>The JavaScript <b>this</b> Keyword</h2>
+
+    <p>In this example, <b>this</b> represents the <b>person</b> object.</p>
+    <p>Because the person object "owns" the fullName method.</p>
+
+    <p id="demo8"></p>
+
+    <script>
+        // Create an object:
+        var person = {
+            firstName: "John",
+            lastName: "Doe",
+            id: 5566,
+            fullName: function () {
+                return this.firstName + " " + this.lastName
+            }
+        }
+
+        // Display data from the object:
+        document.getElementById("demo8").innerHTML = person.fullName()
+    </script>
+    <hr>
+
+    <h2>The JavaScript this Keword</h2>
+    <p>In this example <strong>this</strong> refers to person2, even if it is a method of person1:</p>
+
+    <p id="demo9"></p>
+
+    <script>
+        var person1 = {
+            fullName: function () {
+                return this.firstName + " " + this.lastName
+            }
+        }
+        var person2 = {
+            firstName: "John",
+            lastName: "Doe"
+        }
+        var x =
+            person1.fullName.call(person2)
+        document.getElementById("demo9").innerHTML = x
+    </script>
+    <hr>
+</body>
+
+</html>

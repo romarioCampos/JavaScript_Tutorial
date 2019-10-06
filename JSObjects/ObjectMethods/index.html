@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>The JavaScript <i>this</i> Keyword</h2>
+
+    <p>In this example, <b>this</b> represents the <b>person</b> object.</p>
+    <p>Because the person object "owns" the fullName method.</p>
+
+    <p id="demo01"></p>
+
+    <script>
+        // Create an object:
+        var person = {
+            firstName: "John",
+            lastName: "Doe",
+            id: 5566,
+            fullName: function () {
+                return this.firstName + " " + this.lastName
+            }
+        }
+
+        // Display data from the object:
+        document.getElementById("demo01").innerHTML = person.fullName()
+    </script>
+    <hr>
+
+    <p>Creating and using an object method.</p>
+
+    <p>A method is actually a function definition stored as a property value.</p>
+
+    <p id="demo02"></p>
+
+    <script>
+        var person = {
+            firstName: "John",
+            lastName: "Doe",
+            id: 5566,
+            fullName: function () {
+                return this.firstName + " " + this.lastName
+            }
+        }
+
+        document.getElementById("demo02").innerHTML = person.fullName()
+    </script>
+    <hr>
+
+    <p>An object method is a function definition stored as a property value.</p>
+    <p>If you access it withou(), it will return the function definition:</p>
+
+    <p id="demo03"></p>
+
+    <script>
+        var person = {
+            firstName: "John",
+            lastName: "Doe",
+            id: 5566,
+            fullName: function () {
+                return this.firstName + " " + this.lastName
+            }
+        }
+
+        document.getElementById("demo03").innerHTML = person.fullName
+    </script>
+    <hr>
+
+    <p id="demo04"></p>
+
+    <script>
+        var person = {
+            firstName: "John",
+            lastName: "Doe",
+            id: 5566
+        }
+        person.name = function () {
+            return this.firstName + " " + this.lastName
+        }
+
+        document.getElementById("demo04").innerHTML =
+            "My father is " + person.name()
+    </script>
+    <hr>
+</body>
+
+</html>
